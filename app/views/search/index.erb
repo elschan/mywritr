@@ -1,0 +1,92 @@
+<%if @results_users == [] && @results_notes == [] && params[:query]%>
+  <div class="alert alert-danger fade in">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <%= @no_search_results_error %>
+  </div>
+<% end %>
+
+<%if @results_users == [] && @results_notes == [] %>
+  <%@notes.uniq.each do |note| %>
+    <div class="note">
+      <div class="row">
+        <div class="col-md-1 mobile-hide"></div>
+        <div class="col-md-2 emoticons">
+          <img src="images/<%= note.top_vote_type %>.png"/>
+        </div>
+        <div class="col-md-8">
+          <p><%= note.text %></p>
+          <div class="by-user">
+            <span>By:</span> <a href="/users/<%= note.user_id %>"><%= note.author %></a>
+          </div>
+          <div class="write-about-this">
+            <a href="/notes/<%= note.id %>">Write About This</a>
+          </div>
+          <div class="col-md-1 mobile-hide"></div>
+        </div>
+      </div>
+    </div>
+  <%end%> 
+<%end%>   
+
+<% unless params[:notes_only] == '1' %>
+  <%if @results_users%>
+    <%@results_users.uniq.each do |result| %>
+      <div class="note">
+        <div class="row">
+          <div class="col-md-1 mobile-hide"></div>
+          <div class="col-md-10">
+            <p><a class="username" href="/users/<%=result.id %>"><%=result.username %></a></p>
+            <div class="col-md-1 mobile-hide"></div>
+          </div>
+        </div>
+      </div>
+    <%end %>
+  <%end%>
+<%end%>
+
+<% unless params[:users_only] == '1' %>
+  <%if @results_notes%>
+    <%@results_notes.uniq.each do |note| %>
+      <div class="note">
+        <div class="row">
+          <div class="col-md-1 mobile-hide"></div>
+          <div class="col-md-2 emoticons">
+            <img src="images/<%= note.top_vote_type %>.png"/>
+          </div>
+          <div class="col-md-8">
+            <p><%= note.text %></p>
+            <div class="by-user">
+              <span>By:</span> <a href="/users/<%= note.user_id %>"><%= note.author %></a>
+            </div>
+            <div class="write-about-this">
+              <a href="/notes/<%= note.id %>">Write About This</a>
+            </div>
+            <div class="col-md-1 mobile-hide"></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <%end%>
+  <%if @results_notes_based_on_users != [] %>
+    <%@results_notes_based_on_users.uniq.each do |note| %>
+      <div class="note">
+        <div class="row">
+          <div class="col-md-1 mobile-hide"></div>
+          <div class="col-md-2 emoticons">
+            <img src="images/<%= note.top_vote_type %>.png"/>
+          </div>
+          <div class="col-md-8">
+            <p><%= note.text %></p>
+            <div class="by-user">
+              <span>By:</span> <a href="/users/<%= note.user_id %>"><%= note.author %></a>
+            </div>
+            <div class="write-about-this">
+              <a href="/notes/<%= note.id %>">Write About This</a>
+            </div>
+            <div class="col-md-1 mobile-hide"></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <%end%>
+<%end%>

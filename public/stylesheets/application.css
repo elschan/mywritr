@@ -1,0 +1,435 @@
+body{
+  font-family: lato, arial;
+}
+
+.sign-out{
+  text-align: right;
+  background: #f8f8f8;
+  padding:10px !important;
+}
+.sign-out input[type="submit"]{
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: underline;
+  color:#000;
+}
+.sign-out input[type="submit"]:hover{
+  text-decoration: none;
+}
+.sign-out p, form{
+  display: inline;
+}
+
+/** header **/
+header, footer{
+  background: #232323;
+  margin-bottom:0px !important;
+}
+header a{
+  text-shadow:none;
+  color: white;
+}
+header a:hover{
+  color:white;
+  background:none !important;
+  text-decoration: underline !important;
+}
+header a.logo-text{
+ text-decoration: none !important;
+ font-size:30px; 
+}
+header a.user-profile img{
+  height: 20px !important;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+header a.user-profile img:hover{
+  height: 20px !important;
+  opacity: 1;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+header a.sign-up{
+  background-color: #ff8400;
+}
+header a.sign-up:hover{
+  background-color: #ffa13d !important;
+  text-decoration: none !important;
+}
+header .navbar-toggle .icon-bar{
+  background:white;
+}
+header #bs-navbar{
+  margin-bottom: -10px !important;
+}
+
+/** tag line container **/
+.tag-line-container {
+  background: #249811;
+}
+
+/** #NOTES **/
+.note img{
+  width:100%;
+}
+.note p, .note div.by-user{
+  font-size: 25px;
+  font-weight: 300;
+}
+.note{
+  padding-top:50px;
+  padding-bottom:50px;
+  border-top:1px solid #ddd;
+}
+.note .by-user span{
+  font-size:20px !important;
+}
+.note .by-user a{
+  text-decoration: underline;
+  color:#000;
+  font-size: 20px
+}
+.note .by-user a:hover{
+  text-decoration: none;
+}
+.note .write-about-this{
+  display: block;
+  text-align: center;
+  margin-top:20px;
+}
+
+.note .write-about-this a{
+  height: 42px;
+  padding: 8px 12px;
+  font-family: Lato,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.467;
+  color: #000;
+  border: 2px solid #ff8400;
+  border-radius: 6px;
+  box-shadow: none;
+  -webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
+  transition: border .25s linear,color .25s linear,background-color .25s linear;
+  text-decoration: none;
+}
+.note .write-about-this a:hover{
+  color:white;
+  background: #ff8400;
+}
+
+.note .emoticons{
+  margin-bottom:20px !important;
+}
+@media (max-width: 991px){
+  .emoticons{
+    width:150px;
+    margin: 0 auto;
+    margin-bottom: 20px
+  }
+}
+
+
+.single-form-container{
+  background: #ededed;
+  border: none;
+  margin-bottom:20px;
+  padding:20px;
+}
+.form-label{
+  padding-top:10px; 
+  padding-bottom:10px;
+  font-size: 30px;
+  font-weight: 300;
+}
+}
+
+section.main > div > div > div.col-md-10 > div:nth-child(1) {
+  border:none !important;
+}
+
+/** Comments **/
+.comment img{
+  width:100%;
+}
+.comment p, .comment div.by-user{
+  font-size: 25px;
+  font-weight: 300;
+}
+.comment, .comment-form, div.followers{
+  padding: 50px 20px 50px 20px;
+  background: #f2f2f2;
+  margin-top:50px;
+
+}
+.comment .by-user span{
+  font-size:20px !important;
+}
+.comment .by-user a{
+  text-decoration: underline;
+  color:#000;
+  font-size: 20px
+}
+.comment .by-user a:hover{
+  text-decoration: none;
+}
+.comment .write-about-this{
+  display: block;
+  text-align: center;
+  margin-top:20px;
+}
+.comment-form p{
+  padding-top:0px; 
+  padding-bottom:20px;
+  font-size:30px;
+  font-weight: 300;
+}
+.comment-form .like{
+   -webkit-appearance: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background: url(/images/like.png) left center no-repeat;    
+    background-size: 50px;
+    opacity: .15;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+    margin:20px 20px 0px 0px;
+}
+
+.comment-form .dislike{
+   -webkit-appearance: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background: url(/images/dislike.png) left center no-repeat;    
+    background-size: 50px;
+    opacity: .15;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+    margin:20px 20px 0px 0px;
+}
+
+.comment-form .omg{
+   -webkit-appearance: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background: url(/images/omg.png) left center no-repeat;    
+    background-size: 50px;
+    opacity: .15;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+    margin:20px 20px 0px 0px;
+}
+
+.comment-form .wtf{
+   -webkit-appearance: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background: url(/images/wtf.png) left center no-repeat;    
+    background-size: 50px;
+    opacity: .15;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+    margin:20px 20px 0px 0px;
+}
+
+.comment-form .like:hover, .comment-form .dislike:hover, .comment-form .omg:hover, .comment-form .wtf:hover, .comment-form .like:checked, .comment-form .dislike:checked, .comment-form .omg:checked, .comment-form .wtf:checked{
+  opacity: 1;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+/** first comment is margin 0 **/
+section.main > div > div > div.col-md-10 > div:nth-child(3) {
+  margin-top:0px !important;
+}
+
+.submit-comment, .submit-login, .submit, .follow-this-person a, .stop-follow-btn, .follow-btn{
+  background: #ff8400;
+  color:white;
+  margin-top:20px;
+  height: 42px;
+  padding: 8px 12px;
+  font-family: Lato,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.467;
+  border: 2px solid #ff8400;
+  border-radius: 6px;
+  box-shadow: none;
+  -webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
+  transition: border .25s linear,color .25s linear,background-color .25s linear;
+  text-decoration: none;
+}
+.submit-comment:hover, .submit-login:hover, .follow-this-person a:hover, .stop-follow-btn:hover, .follow-btn:hover{
+  background:white;
+  color:#000;
+  text-decoration: none;
+}
+
+.search {
+  -webkit-appearance: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background: url(/images/search.png) left center no-repeat;    
+    background-size: 30px;
+}
+
+/** Followers **/
+.followers .comment-form{
+ background: #f8f8f8;
+ padding:30px 20px;
+}
+
+
+/** Footer **/
+footer{
+  padding:20px;
+  text-align: center;
+}
+footer span{
+  color:white;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+/** MISC **/
+.main{
+  min-height: 500px;
+}
+.followers, .following{ 
+  color: white; 
+  font-weight: 400; 
+  font-size: 17px; 
+}
+.new-follow{
+  color: green;
+  font-weight: 400;
+  font-size: 13px;
+  margin-left: 5px;
+}
+a.username{
+  color:#000 !important;
+  text-decoration: underline;
+}
+a.username:hover{
+  text-decoration: none;
+}
+.alert-danger{
+  font-size:15px;
+}
+.navbar-nav>li>a, .navbar-brand, .navbar-nav>li>a{
+  margin-bottom:-2px !important;
+
+}
+.navbar-brand, .navbar-nav>li>a{
+  text-shadow: 0 0px 0 rgba(255,255,255,.25) !important;
+}
+
+h1{
+  color:white;
+  margin:10px !important;
+}
+h2{
+  font-size: 40px;
+}
+h2.tag-line {
+  color:white;
+  font-size: 30px;
+  padding-top:10px;
+}
+h2.followers-following-label{
+  color:#000;
+  font-size: 30px;
+
+}
+
+h3.followers a, h3.following a{
+  color:white;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+
+span.following-label{
+  color:#ccc;
+}
+ul.followers-list, ul.followings-list{
+  margin-left:-40px;
+  list-style: none;
+}
+ul.followers-list li p a, ul.followings-list li p a{
+  font-size: 15px !important;
+  color:#000;
+  text-decoration: underline;
+}
+ul.followers-list li p a:hover, ul.followings-list li p a:hover{
+  text-decoration: none;
+}
+
+ul.followers-list li p, ul.followings-list li p{
+  text-decoration: none;
+  color:gray;
+  margin-left: 5px; }
+
+textarea, input { outline: none !important; }
+textarea{
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.spacer-100{
+  height:100px;
+}
+.spacer-50{
+  height: 50px;
+}
+.spacer-40{
+  height: 40px;
+}
+.spacer-30{
+  height: 30px;
+}
+.text-align-left{
+  text-align: left;
+}
+.text-align-right{
+  text-align: right;
+}
+.text-align-center{
+  text-align: center;
+}
+.padding-20{
+  padding:20px !important;
+}
+.input-style{
+  height: 30px; 
+  width: 100%; 
+  border-width: 0;
+  padding:20px;
+  margin-bottom:10px;
+}
+.margin-top-30{
+  margin-top:30px;
+}
+
+@media (min-width: 992px) {
+ .text-align-left-desktop{
+  text-align: left;
+ }
+}
+
+/** Mobile respond under 767 px **/
+  @media (max-width: 767px){
+    .spacer-60{
+      height: 30px;
+    }
+    .spacer-50, .spacer-50, .spacer-40{
+      height: 25px;
+    }
+    .mobile-hide{
+      display:none;
+    }
+    .text-align-center-mobile{
+      text-align: center;
+    }
+  }
+

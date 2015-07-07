@@ -1,0 +1,56 @@
+<section class="tag-line-container">
+  <div class="container">
+    <div class="spacer-100"></div>
+    <div class="text-align-center" class="col-md-12">
+      <h1><%= @user.username %></h1>
+      <%if current_user == @user %>
+        <h2 class="tag-line" contenteditable= "true" style = "outline:none">
+        <% if @user.tagline == nil %>
+            "Insert tagline here"
+         <% else %>   
+            <%=@user.tagline %>
+          <%end%>
+      <%else%>
+          <h2 class="tag-line"><%=@user.tagline%></h2>
+      <%end%>
+        </h2>
+      <table align="center">
+        <tr>
+          <td>
+            <h3 class="followers">Followers: <%= @user.is_followed_by.count %></h3>
+          </td>
+          <td width="30">&nbsp;</td>
+          <td>
+            <h3 class="following">Following: <%= @user.is_following.count %></h3>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <h3 class="followers"><a class="follow-btn" href="/users/<%= @user.id %>/follows">View Follows</a>
+              <% if current_user && (current_user.id == @user.id) && @user.has_new_followers? %>
+                <p class="margin-top-30"><strong>(New Followers!)</strong></p>
+              <% end %>
+            </h3>
+          </td>
+        </tr>
+      </table>
+      <div class="follow-this-person">
+        <% if current_user && (current_user.id != @user.id) %>
+          <div class="spacer-40"></div>
+          <% unless current_user.is_following_ids.include?(@user.id) %>
+            <form method="POST" action="/users/newfollow">
+              <input type="hidden" name="user_id_to_follow" value="<%= @user.id %>">
+              <input class="follow-btn" type="submit" value="Follow This Person">
+            </form>
+          <% else %>
+            <form method="POST" action="/users/unfollow">
+              <input type="hidden" name="user_id_to_unfollow" value="<%= @user.id %>">
+              <input class="stop-follow-btn" type="submit" value="Stop Following This Person">
+            </form>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="spacer-100"></div>
+  </div>
+</section>

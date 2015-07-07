@@ -1,0 +1,36 @@
+
+<% if @error_message %>
+  <div class="alert alert-danger fade in">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Error!</strong> <%= @error_message %>
+  </div>
+<% end %>
+
+<div align="center">
+  <div class="spacer-30"></div>
+  <h2>Login</h2>
+  <div class="spacer-40"></div>
+</div>
+
+<!-- single form container -->
+  <div class="single-form-container">
+    <div class="row">
+      <div class="col-md-1 mobile-hide"></div>
+      <div class="col-md-10">
+      <form method="POST" action="/session">
+        <div>
+         <p class="form-label">Username</p>
+          <input class="input-style" type="text" name="username" />
+           <p class="form-label">Password</p>
+          <input class="input-style" type="password" name="password" />
+          <div align="center">
+            <input class="submit-login" type="submit" value="Login">
+          </div>
+          <div class="height-50">
+        </div>
+      </form>
+      </div>
+      <div class="col-md-1 mobile-hide"></div>
+    </div>
+  </div>
+<!-- #/End of standard-cotainer -->

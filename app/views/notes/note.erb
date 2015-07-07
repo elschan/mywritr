@@ -1,0 +1,89 @@
+<!-- Note -->
+  <div class="note">
+    <div class="row">
+      <div class="col-md-1 mobile-hide"></div>
+      <div class="col-md-2 emoticons"><img src="/images/<%= @note.top_vote_type %>.png"/></div>
+      <div class="col-md-8">
+        <p><%= @note.text %></p>
+        <div class="by-user">
+          <span>By:</span> <a href="/users/<%= @note.user_id %>"><%= @note.author %></a>
+        </div>
+        <div class="col-md-1 mobile-hide"></div>
+      </div>
+    </div>
+  </div>
+<!-- #/End of Note -->
+
+<% unless @note.comments.empty? %>
+  <div align="center">
+    <h2>Things People Say</h2>
+    <div class="spacer-40"></div>
+  </div>
+
+  <% @note.comments.order(created_at: :desc).each do |comment| %> 
+    <!-- Comment -->
+      <div class="comment">
+        <div class="row">
+          <div class="col-md-1 mobile-hide"></div>
+          <div class="col-md-2 emoticons">
+            <% if comment.vote_kind %>
+              <img src="/images/<%= comment.vote_kind %>.png"/>
+            <% else %>
+              <img src="/images/neutral.png"/>
+            <% end %>
+          </div>
+          <div class="col-md-8">
+            <p><%= comment.text %></p>
+            <div class="by-user">
+              <span>By:</span> <a href="/users/<%= comment.user.id%>"><%= comment.author %></a>
+            </div>
+            <div class="col-md-1 mobile-hide"></div>
+          </div>
+        </div>
+      </div>
+    <!-- #/End of Comment -->
+  <% end %>
+<% end %>
+
+<%if @errors %>
+ <% @errors.messages.each do |k,v| %>
+
+ <div class="alert alert-danger fade in">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Error!</strong> <%= k %>: <%= v[0] %>
+</div>
+ <% end %>
+<% end %>
+
+<% if current_user %>
+  <!-- Comment Form -->
+    <div class="comment-form">
+      <div class="row">
+        <div class="col-md-1 mobile-hide"></div>
+        <div class="col-md-10">
+        <p>Insert Your Comment Below!</p>
+        <form method="POST" action="/notes/<%= @note.id %>/comments">
+          <div>
+            <textarea name="text" style="width: 100%; margin: 0; padding: 0; border-width: 0;" rows="6"></textarea>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-md-6">
+              <% if current_user.id != @note.user_id %>
+                <input type="radio" class="like" name="vote_kind" value="like" />
+                <input type="radio" class="dislike" name="vote_kind" value="dislike" />
+                <input type="radio" class="omg"  name="vote_kind" value="omg" />
+                <input type="radio" class="wtf"  name="vote_kind" value="wtf" />
+              <% end %>
+              </div>
+            <div class="col-md-6" align="right">
+              <input class="submit-comment" type="submit" name="submit" value="Submit">
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  <!-- #/End of Comment Form -->
+<%end%>

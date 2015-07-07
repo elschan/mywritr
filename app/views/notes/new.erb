@@ -1,0 +1,40 @@
+<div align="center">
+  <div class="spacer-30"></div>
+  <h2>New Note</h2>
+  <div class="spacer-40"></div>
+</div>
+
+<% if @error_message %>
+  <div class="alert alert-danger fade in">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Error!</strong> <%= @error_message %>
+  </div>
+<% end %>
+
+<% if current_user %>
+<!-- single form container -->
+  <div class="single-form-container">
+    <div class="spacer-30"></div>
+    <div class="row">
+      <div class="col-md-1 mobile-hide"></div>
+      <div class="col-md-10">
+      <form method="POST" action="/notes">
+        <div>
+         <textarea name="text" style="width: 100%; margin: 0; padding: 0; border-width: 0;" rows="3"></textarea>
+          <div align="center">
+            <input name="submit" class="submit" type="submit" value="Submit">
+          </div>
+          <div class="spacer-30">
+        </div>
+      </form>
+      </div>
+      <div class="col-md-1 mobile-hide"></div>
+    </div>
+  </div>
+<!-- #/End of standard-cotainer -->
+<% else %>
+  <div class="alert alert-danger fade in">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Error!</strong> You must be logged in to Writr to post a new note!
+  </div>
+<% end %>
